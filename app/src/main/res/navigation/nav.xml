@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.hospitaltry.login.presintation.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_specalistFragment"
+            app:destination="@id/specalistFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_doctorHomeFragment"
+            app:destination="@id/doctorHomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/specalistFragment"
+        android:name="com.example.hospitaltry.Hr.presintaion.view.SpecalistFragment"
+        android:label="SpecalistFragment" >
+        <action
+            android:id="@+id/action_specalistFragment_to_allDoctorsFragment"
+            app:destination="@id/allDoctorsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/allDoctorsFragment"
+        android:name="com.example.hospitaltry.Hr.presintaion.view.AllDoctorsFragment"
+        android:label="AllDoctorsFragment" >
+        <action
+            android:id="@+id/action_allDoctorsFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.example.hospitaltry.Hr.presintaion.view.ProfileFragment"
+        android:label="ProfileFragment" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorHomeFragment"
+        android:name="com.example.hospitaltry.doctor.presintation.view.DoctorHomeFragment"
+        android:label="DoctorHomeFragment" >
+        <action
+            android:id="@+id/action_doctorHomeFragment_to_callsFragment"
+            app:destination="@id/callsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/callsFragment"
+        android:name="com.example.hospitaltry.doctor.presintation.view.CallsFragment"
+        android:label="CallsFragment" />
+</navigation>
