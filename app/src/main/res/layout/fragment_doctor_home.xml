@@ -85,6 +85,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/container_report"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -164,6 +165,32 @@
             android:layout_height="wrap_content"
             android:text="attendance - leaving"
             android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/container_report"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/container_borown"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_cases"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cases"/>
 
     </LinearLayout>
 

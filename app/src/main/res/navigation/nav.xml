@@ -53,5 +53,13 @@
     <fragment
         android:id="@+id/callsFragment"
         android:name="com.example.hospitaltry.doctor.presintation.view.CallsFragment"
-        android:label="CallsFragment" />
+        android:label="CallsFragment" >
+        <action
+            android:id="@+id/action_callsFragment_to_callDetailsFragement"
+            app:destination="@id/callDetailsFragement" />
+    </fragment>
+    <fragment
+        android:id="@+id/callDetailsFragement"
+        android:name="com.example.hospitaltry.doctor.presintation.view.CallDetailsFragement"
+        android:label="CallDetailsFragement" />
 </navigation>

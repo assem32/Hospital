@@ -59,7 +59,7 @@
 
         android:clickable="true"
         android:focusable="true"
-        android:id="@+id/callsContainer"
+        android:id="@+id/employeeContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -92,7 +92,7 @@
         android:background="@drawable/container_purple"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/callsContainer"
+        app:layout_constraintTop_toBottomOf="@id/employeeContainer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/g1"
         >

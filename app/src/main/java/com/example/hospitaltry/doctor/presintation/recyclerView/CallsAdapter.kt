@@ -8,8 +8,10 @@ import com.example.hospitaltry.databinding.ItemCallsBinding
 import com.example.hospitaltry.databinding.ItemProfileBinding
 import com.example.hospitaltry.doctor.domain.model.CallsModleItem
 
-class CallsAdapter (
-    val onClick:(Int)->Unit
+class CallsAdapter(
+    val onClick: (Int) -> Unit,
+    val btnFunAccept: (Int) -> Unit,
+    val btnFunDecline: (Int) -> Unit
 ):RecyclerView.Adapter<CallsAdapter.Holder>(){
 
     var callList : List<CallsModleItem> ?=null
@@ -29,6 +31,14 @@ class CallsAdapter (
             else
                 binding.correctImg.setImageResource(R.drawable.pending_img)
 
+            binding.acceptBtn.setOnClickListener{
+                btnFunAccept.invoke(call.id)
+            }
+            binding.declineBtn.setOnClickListener{
+                btnFunDecline.invoke(call.id)
+            }
+
+
         }
 
     }
@@ -40,7 +50,7 @@ class CallsAdapter (
     }
 
     override fun getItemCount(): Int {
-        return callList!!.size  ?: 0
+        return callList?.size  ?: 0
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
