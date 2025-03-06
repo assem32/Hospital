@@ -8,9 +8,9 @@ import com.example.hospitaltry.Hr.domain.repo.IGetAllDoctorsRepo
 import javax.inject.Inject
 
 class GetAllDoctorsImp @Inject constructor(val iGetDoctors: IGetDataSourceDoctors):IGetAllDoctorsRepo {
-    override suspend fun getDoctorR(): List<UserModelItem> {
-        val response = iGetDoctors.getDoctor().toDomain()
-        return response
+    override suspend fun getDoctorR(token:String): List<UserModelItem> {
+        val response = iGetDoctors.getDoctor(token)
+        return response.toDomain()
     }
 
     override suspend fun getProfileR(id: String): ProfileData {

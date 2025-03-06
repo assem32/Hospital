@@ -6,7 +6,7 @@ import com.example.hospitaltry.Hr.domain.model.UserModelItem
 
 interface IGetAllDoctorsRepo {
 
-    suspend fun getDoctorR():List<UserModelItem>
+    suspend fun getDoctorR(token:String):List<UserModelItem>
 
     suspend fun getProfileR(id :String):ProfileData
 }

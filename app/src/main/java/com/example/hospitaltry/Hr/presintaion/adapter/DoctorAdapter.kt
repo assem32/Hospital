@@ -1,13 +1,11 @@
 package com.example.hospitaltry.Hr.presintaion.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.hospitaltry.Hr.domain.model.UserModelItem
 import com.example.hospitaltry.databinding.ItemProfileBinding
-import com.example.hospitaltry.login.domain.model.User
 
 class DoctorAdapter (
     val onClick : (Int)-> Unit

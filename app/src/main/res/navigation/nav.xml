@@ -6,14 +6,14 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.hospitaltry.login.presintation.LoginFragment"
+        android:name="com.example.hospitaltry.auth.presintation.LoginFragment"
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_specalistFragment"
             app:destination="@id/specalistFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_doctorHomeFragment"
-            app:destination="@id/doctorHomeFragment" />
+            android:id="@+id/action_loginFragment_to_receptionistHomeFragment"
+            app:destination="@id/receptionistHomeFragment" />
     </fragment>
 
     <fragment
@@ -32,6 +32,12 @@
         <action
             android:id="@+id/action_allDoctorsFragment_to_profileFragment2"
             app:destination="@id/profileFragment2" />
+        <argument
+            android:name="token"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_allDoctorsFragment_to_createCall2"
+            app:destination="@id/createCall" />
     </fragment>
 
     <fragment
@@ -43,15 +49,63 @@
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/doctorHomeFragment"
-        android:name="com.example.hospitaltry.doctor.presintation.view.DoctorHomeFragment"
-        android:label="DoctorHomeFragment" >
+        android:id="@+id/callsFragment"
+        android:name="com.example.hospitaltry.reciptionist.presintation.view.CallsFragment"
+        android:label="CallsFragment" >
+        <argument
+            android:name="token"
+            app:argType="string" />
         <action
-            android:id="@+id/action_doctorHomeFragment_to_callsFragment"
-            app:destination="@id/callsFragment" />
+            android:id="@+id/action_callsFragment_to_callDetails"
+            app:destination="@id/callDetails" />
+        <action
+            android:id="@+id/action_callsFragment_to_createCall"
+            app:destination="@id/createCall" />
     </fragment>
     <fragment
-        android:id="@+id/callsFragment"
-        android:name="com.example.hospitaltry.doctor.presintation.view.CallsFragment"
-        android:label="CallsFragment" />
+        android:id="@+id/receptionistHomeFragment"
+        android:name="com.example.hospitaltry.reciptionist.presintation.view.ReceptionistHomeFragment"
+        android:label="ReceptionistHomeFragment" >
+        <action
+            android:id="@+id/action_receptionistHomeFragment_to_callsFragment"
+            app:destination="@id/callsFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="role"
+            app:argType="string" />
+        <argument
+            android:name="token"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/callDetails"
+        android:name="com.example.hospitaltry.reciptionist.presintation.view.CallDetails"
+        android:label="CallDetails" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="token"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/createCall"
+        android:name="com.example.hospitaltry.reciptionist.presintation.view.CreateCall"
+        android:label="CreateCall" >
+        <action
+            android:id="@+id/action_createCall_to_allDoctorsFragment"
+            app:destination="@id/allDoctorsFragment" />
+        <argument
+            android:name="token"
+            app:argType="string" />
+        <argument
+            android:name="doctor_id"
+            app:argType="string"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_createCall_to_callsFragment"
+            app:destination="@id/callsFragment" />
+    </fragment>
 </navigation>

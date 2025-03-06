@@ -24,7 +24,7 @@ class ProfileFragment :Fragment(){
 
     val args : ProfileFragmentArgs by navArgs()
 
-    private var _binding: FragmentProfileBinding? = null
+    private lateinit var _binding: FragmentProfileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,13 +44,13 @@ class ProfileFragment :Fragment(){
             val res=iGetAllDoctorsRepo.getProfileR(args.id)
             Log.d("hey",res.first_name)
 
-            _binding?.nameTxt?.text = res.first_name+res.last_name
-            _binding?.genderTxt?.text = res.gender
-            _binding?.locationTxt?.text = res.address
-            _binding?.mailTxt?.text = res.email
-            _binding?.mobileTxt?.text = res.mobile
-            _binding?.statusTxt?.text=res.status
-            _binding?.specialTxt?.text = res.specialist
+            _binding.nameTxt.text = res.first_name+res.last_name
+            _binding.genderTxt.text = res.gender
+            _binding.locationTxt.text = res.address
+            _binding.mailTxt.text = res.email
+            _binding.mobileTxt.text = res.mobile
+            _binding.statusTxt.text=res.status
+            _binding.specialTxt.text = res.specialist
 
             showDataState()
 
@@ -62,21 +62,21 @@ class ProfileFragment :Fragment(){
     }
 
     private fun showLoadingState() {
-        _binding?.progressBar?.visibility = View.VISIBLE
-        _binding?.errorTxt?.visibility = View.GONE
-        _binding?.cardView?.visibility = View.GONE
+        _binding.progressBar.visibility = View.VISIBLE
+        _binding.errorTxt.visibility = View.GONE
+        _binding.cardView.visibility = View.GONE
     }
 
     private fun showErrorState() {
-        _binding?.progressBar?.visibility = View.GONE
-        _binding?.errorTxt?.visibility = View.VISIBLE
-        _binding?.cardView?.visibility = View.GONE
+        _binding.progressBar.visibility = View.GONE
+        _binding.errorTxt.visibility = View.VISIBLE
+        _binding.cardView.visibility = View.GONE
     }
 
     private fun showDataState() {
-        _binding?.progressBar?.visibility = View.GONE
-        _binding?.errorTxt?.visibility = View.GONE
-        _binding?.cardView?.visibility = View.VISIBLE
+        _binding.progressBar.visibility = View.GONE
+        _binding.errorTxt.visibility = View.GONE
+        _binding.cardView.visibility = View.VISIBLE
     }
 
 }

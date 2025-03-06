@@ -23,8 +23,8 @@ class SpecalistFragment :Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding?.employeeLayout?.setOnClickListener {
-            findNavController().navigate(SpecalistFragmentDirections.actionSpecalistFragmentToAllDoctorsFragment())
+        binding?.employeeContainer?.setOnClickListener {
+//            findNavController().navigate(SpecalistFragmentDirections.actionSpecalistFragmentToAllDoctorsFragment())
         }
 
 
