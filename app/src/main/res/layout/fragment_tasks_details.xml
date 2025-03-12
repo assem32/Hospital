@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    >
+
+    <TextView
+        android:id="@+id/txt_task_details"
+        style="@style/txt_top_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/tasks_details"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+        app:layout_constraintTop_toTopOf="@id/btn_back" />
+
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="3dp"
+        android:src="@drawable/icon_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_task_name"
+        style="@style/edt_details_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/container_grey_light"
+        android:gravity="center_vertical"
+        android:paddingVertical="8dp"
+        android:paddingStart="10dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back"
+        tools:layout_editor_absoluteX="1dp"
+        tools:text="Task Name" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="10dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/txt_task_name">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/img_manger" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/txt_user_name"
+        style="@style/txt_regular14_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="@+id/cardView"
+        tools:text="Shawky Ahmed" />
+
+    <TextView
+        android:id="@+id/txt_type"
+        style="@style/txt_regular12_tale_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/txt_user_name"
+        tools:text="Specialist - Manger" />
+
+
+    <TextView
+        android:id="@+id/text_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_user_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_user_name"
+        tools:text="12-23-2222" />
+
+    <TextView
+        android:id="@+id/txt_details"
+        style="@style/txt_regular12_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/txt_type"
+        tools:text="Details note : Lorem Ipsum is simply dummy text of printing and typesetting industry.Lorem Ipsum" />
+
+
+    <TextView
+        android:id="@+id/txt_todo"
+        style="@style/txt_regular14_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="To do"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_details" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_todo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/g1"
+        app:layout_constraintTop_toBottomOf="@+id/txt_todo"
+        app:reverseLayout="false" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_employee"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/g1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/img_manger" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txt_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cardView_employee"
+        style="@style/txt_regular12_style"
+        />
+
+
+    <TextView
+        android:id="@+id/txt_employee_name"
+        style="@style/txt_regular14_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toEndOf="@+id/cardView_employee"
+        app:layout_constraintTop_toTopOf="@+id/cardView_employee"
+        tools:text="Shawky Ahmed" />
+
+    <TextView
+        android:id="@+id/txt_employee_type"
+        style="@style/txt_regular12_tale_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/cardView_employee"
+        app:layout_constraintTop_toBottomOf="@+id/txt_employee_name"
+        tools:text="Specialist - Manger" />
+
+
+    <TextView
+        android:id="@+id/txt_employee_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_employee_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_employee_name"
+        tools:text="12-23-2222" />
+
+
+    <TextView
+        android:id="@+id/btn_finish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_main"
+        android:gravity="center"
+style="@style/txt_tale_btn_style"
+        android:text="Finish"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -52,6 +52,15 @@ class LoginFragment : Fragment() {
             if (it.specialist=="receptionist"){
                 findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToReceptionistHomeFragment(it.firstName+it.lastName,it.specialist,it.accessToken))
             }
+            else if (it.specialist=="hr"){
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToSpecalistFragment(it.firstName+it.lastName,it.specialist))
+            }
+            else if(it.specialist=="doctor"){
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToDoctorHomeFragment())
+            }
+            else if(it.specialist=="manger"){
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToMangerHomeFragment())
+            }
             user=it
 
         }

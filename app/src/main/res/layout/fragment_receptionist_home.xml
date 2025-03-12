@@ -43,7 +43,7 @@
         android:id="@+id/noti"
         android:layout_height="20dp"
         android:layout_marginEnd="19dp"
-        android:background="@drawable/notification"
+        android:background="@drawable/icon_notification"
         app:layout_constraintBottom_toBottomOf="@id/profile_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/profile_image" />
@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginStart="14dp"
-        android:background="@drawable/blue_container"
+        android:background="@drawable/container_blue"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/profile_image"
@@ -74,7 +74,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/group_4636"/>
+            android:src="@drawable/icon_empolyee_home"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/report_icon"/>
+            android:src="@drawable/icon_report"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -132,7 +132,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/group_346"/>
+            android:src="@drawable/icon_tasks_home"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -143,7 +143,7 @@
 
 
     <LinearLayout
-        android:id="@+id/fingerprint_container"
+        android:id="@+id/container_attendence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -158,7 +158,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/group_346"/>
+            android:src="@drawable/icon_tasks_home"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

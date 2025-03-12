@@ -6,20 +6,20 @@ import com.example.hospitaltry.reciptionist.data.model.ReciptanistCallsModel
 import com.example.hospitaltry.reciptionist.domain.model.CallEntity
 import com.example.hospitaltry.reciptionist.domain.model.CallsModleItem
 
-fun ReciptanistCallsModel.toDomain():List<CallsModleItem>{
-    return this.data.map {
-        it.toDomain()
-    }
-}
-
-fun CallData.toDomain():CallsModleItem{
-    return CallsModleItem(
-        patient_name = this.patient_name,
-        created_at = this.created_at,
-        id = this.id,
-        status = this.status
-    )
-}
+//fun ReciptanistCallsModel.toDomain():List<CallsModleItem>{
+//    return this.data.map {
+//        it.toDomain()
+//    }
+//}
+//
+//fun CallData.toDomain():CallsModleItem{
+//    return CallsModleItem(
+//        patient_name = this.patient_name,
+//        created_at = this.created_at,
+//        id = this.id,
+//        status = this.status
+//    )
+//}
 
 
 fun CallDetailsModel.toDomain():CallEntity{

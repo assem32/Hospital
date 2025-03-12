@@ -3,8 +3,8 @@ package com.example.hospitaltry.Hr.di
 import com.example.hospitaltry.Api.ApiCalls
 import com.example.hospitaltry.Hr.data.dataSource.remote.GetDoctorsDataSourceImp
 import com.example.hospitaltry.Hr.data.dataSource.remote.IGetDataSourceDoctors
-import com.example.hospitaltry.Hr.data.repo.GetAllDoctorsImp
-import com.example.hospitaltry.Hr.domain.repo.IGetAllDoctorsRepo
+import com.example.hospitaltry.Hr.data.repo.HrImp
+import com.example.hospitaltry.Hr.domain.repo.IHrRepo
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,7 +24,7 @@ object HrDi {
 
     @Provides
     @Singleton
-    fun getDoctorsRepo(iGetDataSourceDoctors: IGetDataSourceDoctors):IGetAllDoctorsRepo{
-        return GetAllDoctorsImp(iGetDataSourceDoctors)
+    fun getDoctorsRepo(iGetDataSourceDoctors: IGetDataSourceDoctors):IHrRepo{
+        return HrImp(iGetDataSourceDoctors)
     }
 }

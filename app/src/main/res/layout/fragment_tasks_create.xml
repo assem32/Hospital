@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    >
+
+    <TextView
+        android:id="@+id/txt_task_details"
+        style="@style/txt_top_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tasks_details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_task_name"
+        style="@style/edt_details_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/container_details"
+        android:hint="@string/tasks_name"
+        android:padding="14dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_task_details"
+        android:layout_marginTop="24dp"
+        />
+
+    <TextView
+        android:id="@+id/edt_select_employee"
+        style="@style/edt_details_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/container_details"
+        android:drawableEnd="@drawable/icon_forward"
+        android:padding="14dp"
+        android:text="@string/tasks_select_employee"
+        app:layout_constraintTop_toBottomOf="@id/edt_task_name"
+        android:layout_marginTop="20dp"
+
+        />
+
+    <EditText
+        android:id="@+id/edt_description"
+        style="@style/edt_details_style"
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:background="@drawable/container_details"
+        android:gravity="start"
+        android:hint="@string/tasks_name"
+        android:padding="14dp"
+        android:layout_marginTop="20dp"
+
+        app:layout_constraintTop_toBottomOf="@id/edt_select_employee" />
+
+    <TextView
+
+        style="txt_medium_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To do"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+
+        app:layout_constraintTop_toBottomOf="@id/edt_description" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/txt_add"
+        app:layout_constraintTop_toTopOf="@id/txt_add"
+        app:layout_constraintBottom_toBottomOf="@id/txt_add"
+        android:src="@drawable/icon_add_circle"/>
+
+    <TextView
+        android:id="@+id/txt_add"
+        style="txt_medium_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+
+        app:layout_constraintTop_toBottomOf="@id/edt_description" />
+
+    <LinearLayout
+        android:id="@+id/container_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/edt_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_add"
+        android:background="@drawable/container_dots"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_donload"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_upload"
+            android:text="Upload"
+            style="@style/txt_white_btn_style"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            />
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/btn_main"
+        android:text="Send"
+        android:gravity="center"
+        style="@style/txt_tale_btn_style"
+        />
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

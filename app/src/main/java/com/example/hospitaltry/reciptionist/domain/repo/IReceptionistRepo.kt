@@ -7,7 +7,7 @@ import com.example.hospitaltry.reciptionist.domain.model.CallEntity
 import com.example.hospitaltry.reciptionist.domain.model.CallsModleItem
 
 interface IReceptionistRepo {
-    suspend fun getAllCalls(token :String):List<CallsModleItem>
+//    suspend fun getAllCalls(token :String):List<CallsModleItem>
 
     suspend fun getCallDetail(id :Int,token :String):CallEntity
 

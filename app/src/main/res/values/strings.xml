@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">hospital try</string>
+
+    <string name="calls_number">You have new %s Requests</string>
+
+    <string name="report_number">You have new %s Reports</string>
+
+    <string name="tasks_number">You have new %s Tasks</string>
+
+
+
+
+
+<!--    task create-->
+    <string name="tasks_details">Task Details</string>
+    <string name="tasks_name">Task name</string>
+    <string name="tasks_select_employee">Select Employee</string>
 </resources>

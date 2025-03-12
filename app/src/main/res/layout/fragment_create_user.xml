@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/background_up"
+
+        app:layout_constraintBottom_toTopOf="@id/g4"
+        app:layout_constraintEnd_toEndOf="@id/g5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintGuide_percent="0.45"
+        android:orientation="horizontal"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g5"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.75"
+        android:orientation="vertical"
+        />
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/background_down"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/g2"
+        app:layout_constraintStart_toStartOf="@id/g3"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintGuide_percent="0.6"
+        android:orientation="horizontal"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintGuide_percent="0.25"
+        android:orientation="vertical"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+
+
+
+            <!-- Email Input -->
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Phone Number"
+                android:background="@drawable/style_textbox"
+                android:drawableLeft="@drawable/icon_phone"
+                android:padding="16dp"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Password Input -->
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Password"
+                android:background="@drawable/style_textbox"
+                android:drawableLeft="@drawable/icon_lock"
+                android:padding="16dp"
+                android:inputType="textPassword"
+                android:layout_marginTop="16dp"/>
+
+            <!-- First Name Input -->
+            <EditText
+                android:id="@+id/first_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="First Name"
+                android:background="@drawable/style_textbox"
+                android:drawableLeft="@drawable/icon_lock"
+                android:padding="16dp"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Last Name Input -->
+            <EditText
+                android:id="@+id/last_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Last Name"
+                android:background="@drawable/style_textbox"
+                android:drawableLeft="@drawable/icon_lock"
+                android:padding="16dp"
+                android:layout_marginTop="16dp"/>
+
+
+
+            <Spinner
+                android:background="@drawable/style_textbox"
+
+                android:id="@+id/gender_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Specialist Dropdown -->
+
+
+            <Spinner
+                android:background="@drawable/style_textbox"
+
+                android:id="@+id/specialist_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+
+
+            <Spinner
+                android:background="@drawable/style_textbox"
+                android:id="@+id/status_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Address Input -->
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Address"
+                android:background="@drawable/style_textbox"
+                android:drawableLeft="@drawable/icon_lock"
+                android:padding="16dp"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Mobile Input -->
+            <EditText
+                android:id="@+id/mobile"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Mobile"
+                android:background="@drawable/style_textbox"
+                android:drawableLeft="@drawable/icon_lock"
+                android:padding="16dp"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Birthday Input -->
+            <EditText
+                android:id="@+id/birthday"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Birthday"
+                android:background="@drawable/style_textbox"
+                android:drawableLeft="@drawable/icon_lock"
+                android:padding="16dp"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Login Button -->
+            <TextView
+                android:id="@+id/create_btn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Login"
+                android:gravity="center"
+                android:textSize="26sp"
+                android:background="@drawable/style_btn"
+                android:layout_marginTop="30dp"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

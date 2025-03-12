@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txt_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Tastks"
+        style="@style/txt_top_style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/date_editor"
+        android:background="@drawable/style_textbox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/calender_black"
+        app:layout_constraintEnd_toStartOf="@id/add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_task"
+        android:layout_marginEnd="12dp"
+        />
+
+    <ImageView
+        android:id="@+id/add"
+        android:layout_marginStart="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/add_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/date_editor"
+        app:layout_constraintBottom_toBottomOf="@id/date_editor"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/recycler_tasks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date_editor"
+
+
+        app:layout_constraintVertical_bias="0.0"
+        app:spanCount="1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

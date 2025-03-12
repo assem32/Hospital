@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
-import com.example.hospitaltry.Hr.domain.repo.IGetAllDoctorsRepo
+import com.example.hospitaltry.Hr.domain.repo.IHrRepo
 import com.example.hospitaltry.R
 import com.example.hospitaltry.databinding.FragmentProfileBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,7 +20,7 @@ import javax.inject.Inject
 class ProfileFragment :Fragment(){
 
     @Inject
-    lateinit var iGetAllDoctorsRepo: IGetAllDoctorsRepo
+    lateinit var iHrRepo: IHrRepo
 
     val args : ProfileFragmentArgs by navArgs()
 
@@ -41,10 +41,10 @@ class ProfileFragment :Fragment(){
 
         showLoadingState()
         lifecycleScope.launch {
-            val res=iGetAllDoctorsRepo.getProfileR(args.id)
+            val res=iHrRepo.getProfile(args.id)
             Log.d("hey",res.first_name)
 
-            _binding.nameTxt.text = res.first_name+res.last_name
+            _binding.txtName.text = res.first_name+res.last_name
             _binding.genderTxt.text = res.gender
             _binding.locationTxt.text = res.address
             _binding.mailTxt.text = res.email

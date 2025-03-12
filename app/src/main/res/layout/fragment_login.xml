@@ -12,12 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.10" />
+        app:layout_constraintGuide_percent="0.10123119" />
 
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/rectangle3"
+        android:src="@drawable/background_up"
 
         app:layout_constraintBottom_toTopOf="@id/g4"
         app:layout_constraintEnd_toEndOf="@id/g5"
@@ -30,9 +30,8 @@
         android:id="@+id/g4"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        app:layout_constraintGuide_percent="0.45"
         android:orientation="horizontal"
-        />
+        app:layout_constraintGuide_percent="0.4528044" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g5"
         android:layout_width="1dp"
@@ -43,7 +42,7 @@
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/rectangle2"
+        android:src="@drawable/background_down"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/g2"
         app:layout_constraintStart_toStartOf="@id/g3"
@@ -68,7 +67,7 @@
         android:id="@+id/logo_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/group340"
+        android:src="@drawable/img_login"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/g1" />
@@ -99,7 +98,7 @@
 
     <EditText
         android:id="@+id/email"
-        android:background="@drawable/text_box"
+        android:background="@drawable/style_textbox"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@id/password"
@@ -108,16 +107,16 @@
         android:layout_height="50dp"
         android:layout_marginTop="70dp"
         android:hint="Phone Number"
-        android:drawableLeft="@drawable/phone_call2"
+        android:drawableStart="@drawable/icon_mail"
         android:padding="16dp"
         android:drawablePadding="16dp"
-        android:textSize="14dp"
+        style="@style/txt_hint_style"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
 
         />
     <EditText
-        android:background="@drawable/text_box"
+        android:background="@drawable/style_textbox"
         android:id="@+id/password"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -126,13 +125,13 @@
         android:layout_height="50dp"
         android:layout_marginTop="28dp"
         android:hint="Password"
-        android:drawableLeft="@drawable/fi_rr_lock"
+        android:drawableStart="@drawable/icon_lock"
         android:padding="16dp"
         android:drawablePadding="16dp"
         android:inputType="textPassword"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:textSize="14dp"
+        style="@style/txt_hint_style"
 
         />
 
@@ -141,7 +140,7 @@
         android:id="@+id/login_btn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/background_btn"
+        android:background="@drawable/style_btn"
         app:layout_constraintTop_toBottomOf="@id/password"
         android:layout_marginTop="50dp"
         android:gravity="center"

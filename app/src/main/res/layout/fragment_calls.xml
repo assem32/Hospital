@@ -11,13 +11,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="Calls"
+        style="@style/txt_top_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/date_editor"
-        android:background="@drawable/text_box"
+        android:background="@drawable/style_textbox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:drawableEnd="@drawable/calender_black"

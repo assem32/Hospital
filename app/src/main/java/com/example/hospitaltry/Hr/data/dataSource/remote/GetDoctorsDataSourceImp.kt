@@ -5,6 +5,8 @@ import com.example.hospitaltry.Hr.data.dataSource.mapper.toDomain
 import com.example.hospitaltry.Hr.data.model.DoctorResp
 import com.example.hospitaltry.Hr.data.model.ProfileData
 import com.example.hospitaltry.Hr.data.model.ProfileModel
+import com.example.hospitaltry.Hr.data.model.RegisterNewUserModel
+import com.example.hospitaltry.Hr.domain.model.RegisterModel
 import javax.inject.Inject
 
 class GetDoctorsDataSourceImp @Inject constructor(val apiCalls: ApiCalls): IGetDataSourceDoctors {
@@ -20,6 +22,12 @@ class GetDoctorsDataSourceImp @Inject constructor(val apiCalls: ApiCalls): IGetD
         val response = apiCalls.getProfile(token,id)
         return response
 
+    }
+
+    override suspend fun createUser(registerModel: RegisterModel): RegisterNewUserModel {
+//        val token="Bearer $token"
+        val response = apiCalls.createUser(registerModel)
+        return response
     }
 
 

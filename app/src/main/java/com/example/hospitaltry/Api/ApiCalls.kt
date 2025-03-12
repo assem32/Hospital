@@ -2,9 +2,14 @@ package com.example.hospitaltry.Api
 
 import com.example.hospitaltry.Hr.data.model.DoctorResp
 import com.example.hospitaltry.Hr.data.model.ProfileModel
+import com.example.hospitaltry.Hr.data.model.RegisterNewUserModel
+import com.example.hospitaltry.Hr.domain.model.RegisterModel
 import com.example.hospitaltry.auth.data.model.LoginRequest
 import com.example.hospitaltry.reciptionist.data.model.ReciptanistCallsModel
 import com.example.hospitaltry.auth.data.model.UserModel
+import com.example.hospitaltry.common.tasks.data.model.AllTasksRespons
+import com.example.hospitaltry.common.tasks.data.model.TaskDetailsModel
+import com.example.hospitaltry.doctor.data.model.AcceptOrRejectModel
 import com.example.hospitaltry.reciptionist.data.model.CallDetailsModel
 import com.example.hospitaltry.reciptionist.data.model.CreateCallResp
 import com.example.hospitaltry.reciptionist.domain.model.CallCreateEntitiy
@@ -13,6 +18,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.Query
 
@@ -37,5 +43,18 @@ interface ApiCalls {
 
     @POST("calls")
     suspend fun createCall(@Header ("Authorization") token:String ,@Body callEntity: CallCreateEntitiy):CreateCallResp
+
+
+    @POST("register")
+    suspend fun createUser(@Body registerModel: RegisterModel):RegisterNewUserModel
+
+    @PUT("calls-accept/{id}")
+    suspend fun acceptOrReject(@Header ("Authorization") token:String,@Path("id") id:Int):AcceptOrRejectModel
+
+    @GET("tasks")
+    suspend fun getTasks(@Header ("Authorization") token:String,@Query ("date") date:String):AllTasksRespons
+
+    @GET("tasks/{id}")
+    suspend fun getTaskDetails(@Header ("Authorization") token:String,@Path ("id") id:Int):TaskDetailsModel
 
 }

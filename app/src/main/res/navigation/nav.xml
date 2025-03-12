@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/createTaskFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -14,15 +14,27 @@
         <action
             android:id="@+id/action_loginFragment_to_receptionistHomeFragment"
             app:destination="@id/receptionistHomeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_doctorHomeFragment"
+            app:destination="@id/doctorHomeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mangerHomeFragment"
+            app:destination="@id/mangerHomeFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/specalistFragment"
-        android:name="com.example.hospitaltry.Hr.presintaion.view.SpecalistFragment"
+        android:name="com.example.hospitaltry.Hr.presintaion.view.HrFragment"
         android:label="SpecalistFragment" >
         <action
             android:id="@+id/action_specalistFragment_to_allDoctorsFragment"
             app:destination="@id/allDoctorsFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="role"
+            app:argType="string" />
     </fragment>
 
     <fragment
@@ -38,6 +50,9 @@
         <action
             android:id="@+id/action_allDoctorsFragment_to_createCall2"
             app:destination="@id/createCall" />
+        <action
+            android:id="@+id/action_allDoctorsFragment_to_createUserFragment"
+            app:destination="@id/createUserFragment" />
     </fragment>
 
     <fragment
@@ -108,4 +123,47 @@
             android:id="@+id/action_createCall_to_callsFragment"
             app:destination="@id/callsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/createUserFragment"
+        android:name="com.example.hospitaltry.Hr.presintaion.view.CreateUserFragment"
+        android:label="CreateUserFragment" />
+    <fragment
+        android:id="@+id/doctorHomeFragment"
+        android:name="com.example.hospitaltry.doctor.presentation.DoctorHomeFragment"
+        android:label="DoctorHomeFragment" >
+        <action
+            android:id="@+id/action_doctorHomeFragment_to_doctorAssignCallFragment"
+            app:destination="@id/doctorAssignCallFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorAssignCallFragment"
+        android:name="com.example.hospitaltry.doctor.presentation.DoctorAssignCallFragment"
+        android:label="DoctorAssignCallFragment" />
+    <fragment
+        android:id="@+id/mangerHomeFragment"
+        android:name="com.example.hospitaltry.manger.presentation.view.MangerHomeFragment"
+        android:label="MangerHomeFragment" >
+        <action
+            android:id="@+id/action_mangerHomeFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.example.hospitaltry.common.tasks.presentation.view.TasksFragment"
+        android:label="TasksFragment" >
+        <action
+            android:id="@+id/action_tasksFragment_to_tasksDetailsFragment"
+            app:destination="@id/tasksDetailsFragment" />
+        <action
+            android:id="@+id/action_tasksFragment_to_createTaskFragment"
+            app:destination="@id/createTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tasksDetailsFragment"
+        android:name="com.example.hospitaltry.common.tasks.presentation.view.TasksDetailsFragment"
+        android:label="TasksDetailsFragment" />
+    <fragment
+        android:id="@+id/createTaskFragment"
+        android:name="com.example.hospitaltry.manger.presentation.view.CreateTaskFragment"
+        android:label="CreateTaskFragment" />
 </navigation>

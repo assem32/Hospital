@@ -11,10 +11,10 @@ import com.example.hospitaltry.reciptionist.domain.repo.IReceptionistRepo
 import javax.inject.Inject
 
 class ReciptinistRepo @Inject constructor(val iDoctorRemoteDataSource: IReceptionistRemoteDataSource): IReceptionistRepo {
-    override suspend fun getAllCalls(token:String) :List<CallsModleItem>{
-        val resp= iDoctorRemoteDataSource.getDoctorCalls(token)
-        return resp.toDomain()
-    }
+//    override suspend fun getAllCalls(token:String) :List<CallsModleItem>{
+//        val resp= iDoctorRemoteDataSource.getDoctorCalls(token)
+//        return resp.toDomain()
+//    }
 
     override suspend fun getCallDetail(id: Int,token :String): CallEntity {
         val resp= iDoctorRemoteDataSource.getCallDetails(id,token)

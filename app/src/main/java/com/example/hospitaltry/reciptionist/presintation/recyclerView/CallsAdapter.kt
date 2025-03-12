@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hospitaltry.R
+import com.example.hospitaltry.common.calls.domain.entity.CallsEntity
 import com.example.hospitaltry.databinding.ItemCallsBinding
 import com.example.hospitaltry.reciptionist.domain.model.CallsModleItem
 
@@ -11,7 +12,7 @@ class CallsAdapter (
     val onClick:(Int)->Unit
 ):RecyclerView.Adapter<CallsAdapter.Holder>(){
 
-    var callList : List<CallsModleItem> ?=null
+    var callList : List<CallsEntity> ?=null
 
     inner class Holder(val binding : ItemCallsBinding):RecyclerView.ViewHolder(binding.root){
         init {
@@ -20,13 +21,13 @@ class CallsAdapter (
         }
         }
 
-        fun bind(call:CallsModleItem){
-            binding.nameTxt.text=call.patient_name
+        fun bind(call: CallsEntity){
+            binding.txtName.text=call.patient_name
             binding.dateTxt.text=call.created_at
             if(call.status=="pending_doctor")
-                binding.correctImg.setImageResource(R.drawable.correct_img)
+                binding.correctImg.setImageResource(R.drawable.icon_done)
             else
-                binding.correctImg.setImageResource(R.drawable.pending_img)
+                binding.correctImg.setImageResource(R.drawable.icon_pending)
         }
 
     }
