@@ -24,6 +24,7 @@ class TasksAdapter : RecyclerView.Adapter<TasksAdapter.Holder>() {
             }
         }
         fun bind(data: TasksData){
+
             binding.txtTaskName.text = data.task_name
             binding.dateTxt.text = data.created_at
 //            Glide.with(binding.root).load(user.avatar).into(binding.correctImg)

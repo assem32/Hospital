@@ -1,17 +1,15 @@
-package com.example.hospitaltry.common.tasks.presentation.adapter
+package com.example.hospitaltry.manger.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hospitaltry.common.tasks.data.model.TasksData
 import com.example.hospitaltry.common.tasks.data.model.ToDo
-import com.example.hospitaltry.databinding.ItemTaskBinding
 import com.example.hospitaltry.databinding.ItemTodoBinding
 import com.example.hospitaltry.user
 
-class TodoAdapter :RecyclerView.Adapter<TodoAdapter.Holder>(){
-    var list :List<ToDo>?=null
+class TaskDelAdapter : RecyclerView.Adapter<TaskDelAdapter.Holder>(){
+    var list :List<String>?=null
 
     inner class Holder(val binding : ItemTodoBinding) : RecyclerView.ViewHolder(binding.root){
         init {
@@ -19,11 +17,9 @@ class TodoAdapter :RecyclerView.Adapter<TodoAdapter.Holder>(){
 
             }
         }
-        fun bind(todoString: ToDo){
-            if (user.specialist=="manger"){
-                binding.btnDeleteTask.visibility= View.VISIBLE
-            }
-            binding.txtTodo.text = todoString.title
+        fun bind(todoString: String){
+            binding.btnDeleteTask.visibility= View.VISIBLE
+            binding.txtTodo.text = todoString
         }
 
     }

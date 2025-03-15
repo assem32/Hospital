@@ -7,13 +7,16 @@ import com.example.hospitaltry.Hr.domain.model.RegisterModel
 import com.example.hospitaltry.auth.data.model.LoginRequest
 import com.example.hospitaltry.reciptionist.data.model.ReciptanistCallsModel
 import com.example.hospitaltry.auth.data.model.UserModel
+import com.example.hospitaltry.common.cases.data.model.CaseDetailsModel
+import com.example.hospitaltry.common.cases.data.model.CasesModel
 import com.example.hospitaltry.common.tasks.data.model.AllTasksRespons
 import com.example.hospitaltry.common.tasks.data.model.TaskDetailsModel
 import com.example.hospitaltry.doctor.data.model.AcceptOrRejectModel
+import com.example.hospitaltry.manger.data.model.CreateTaskModel
+import com.example.hospitaltry.manger.data.model.CreateTaskResponse
 import com.example.hospitaltry.reciptionist.data.model.CallDetailsModel
 import com.example.hospitaltry.reciptionist.data.model.CreateCallResp
 import com.example.hospitaltry.reciptionist.domain.model.CallCreateEntitiy
-import com.example.hospitaltry.reciptionist.domain.model.CallEntity
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -57,4 +60,13 @@ interface ApiCalls {
     @GET("tasks/{id}")
     suspend fun getTaskDetails(@Header ("Authorization") token:String,@Path ("id") id:Int):TaskDetailsModel
 
+    @POST("tasks")
+    suspend fun createTask(@Header ("Authorization") token:String,@Body createTaskModel: CreateTaskModel):CreateTaskResponse
+
+
+    @GET("case")
+    suspend fun getCases(@Header ("Authorization") token:String,):CasesModel
+
+    @GET("case/{id}")
+    suspend fun getCaseDetails(@Header ("Authorization") token:String,@Path ("id") id:Int):CaseDetailsModel
 }

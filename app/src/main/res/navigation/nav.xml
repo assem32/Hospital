@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav"
-    app:startDestination="@id/createTaskFragment">
+    app:startDestination="@id/casesFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -146,6 +146,9 @@
         <action
             android:id="@+id/action_mangerHomeFragment_to_tasksFragment"
             app:destination="@id/tasksFragment" />
+        <action
+            android:id="@+id/action_mangerHomeFragment_to_casesFragment"
+            app:destination="@id/casesFragment" />
     </fragment>
     <fragment
         android:id="@+id/tasksFragment"
@@ -166,4 +169,20 @@
         android:id="@+id/createTaskFragment"
         android:name="com.example.hospitaltry.manger.presentation.view.CreateTaskFragment"
         android:label="CreateTaskFragment" />
+    <fragment
+        android:id="@+id/casesFragment"
+        android:name="com.example.hospitaltry.common.cases.presentation.view.CasesFragment"
+        android:label="CasesFragment" >
+        <action
+            android:id="@+id/action_casesFragment_to_caseDetailsFragment"
+            app:destination="@id/caseDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/caseDetailsFragment"
+        android:name="com.example.hospitaltry.common.cases.presentation.view.CaseDetailsFragment"
+        android:label="CaseDetailsFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
 </navigation>

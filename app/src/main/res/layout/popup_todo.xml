@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:padding="12dp"
+    >
+
+    <EditText
+        android:id="@+id/edt_report_description"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/container_dots"
+        android:gravity="top"
+        android:hint="Todo details"
+        android:padding="12dp"
+        android:layout_marginTop="10dp"
+        style="@style/txt_regular12_style"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <TextView
+        android:id="@+id/btn_add_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        style="@style/txt_tale_btn_style"
+        android:text="Add"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_main"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_report_description" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
