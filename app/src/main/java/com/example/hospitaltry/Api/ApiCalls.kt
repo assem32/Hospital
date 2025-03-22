@@ -9,6 +9,9 @@ import com.example.hospitaltry.reciptionist.data.model.ReciptanistCallsModel
 import com.example.hospitaltry.auth.data.model.UserModel
 import com.example.hospitaltry.common.cases.data.model.CaseDetailsModel
 import com.example.hospitaltry.common.cases.data.model.CasesModel
+import com.example.hospitaltry.common.report.data.model.AnswerModel
+import com.example.hospitaltry.common.report.data.model.ReportAllModel
+import com.example.hospitaltry.common.report.data.model.ReportDetailsModel
 import com.example.hospitaltry.common.tasks.data.model.AllTasksRespons
 import com.example.hospitaltry.common.tasks.data.model.TaskDetailsModel
 import com.example.hospitaltry.doctor.data.model.AcceptOrRejectModel
@@ -52,7 +55,7 @@ interface ApiCalls {
     suspend fun createUser(@Body registerModel: RegisterModel):RegisterNewUserModel
 
     @PUT("calls-accept/{id}")
-    suspend fun acceptOrReject(@Header ("Authorization") token:String,@Path("id") id:Int):AcceptOrRejectModel
+    suspend fun acceptOrReject(@Header ("Authorization") token:String,@Path("id") id:Int,@Body status:String):AcceptOrRejectModel
 
     @GET("tasks")
     suspend fun getTasks(@Header ("Authorization") token:String,@Query ("date") date:String):AllTasksRespons
@@ -69,4 +72,15 @@ interface ApiCalls {
 
     @GET("case/{id}")
     suspend fun getCaseDetails(@Header ("Authorization") token:String,@Path ("id") id:Int):CaseDetailsModel
+
+    @GET("reports")
+    suspend fun getReports(@Header ("Authorization") token:String,@Query ("date") date:String):ReportAllModel
+
+    @GET("reports/{id}")
+    suspend fun getReportDetails(@Header ("Authorization") token:String,@Path ("id") id:Int):ReportDetailsModel
+
+    @PUT("reports/{id}")
+    suspend fun putReportAnswer(@Header ("Authorization") token:String,@Path ("id") id:Int,@Body answer:String):AnswerModel
+
+
 }

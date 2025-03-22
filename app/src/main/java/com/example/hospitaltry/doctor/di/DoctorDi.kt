@@ -18,13 +18,13 @@ object DoctorDi  {
 
     @Provides
     @Singleton
-    suspend fun provideDoctorDataSource(apiCalls: ApiCalls):IDoctorDataSource{
+     fun provideDoctorDataSource(apiCalls: ApiCalls):IDoctorDataSource{
         return DoctorDataSourceImp(apiCalls)
     }
 
     @Provides
     @Singleton
-    suspend fun provideDoctorRepo( iDoctorDataSource: IDoctorDataSource):IDoctorRepo{
+     fun provideDoctorRepo( iDoctorDataSource: IDoctorDataSource):IDoctorRepo{
         return DoctorRepoImp(iDoctorDataSource)
     }
 }

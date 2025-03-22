@@ -6,9 +6,9 @@ import com.example.hospitaltry.user
 import javax.inject.Inject
 
 class DoctorDataSourceImp @Inject constructor(val apiCalls: ApiCalls):IDoctorDataSource {
-    override suspend fun acceptOrReject(callId: Int): AcceptOrRejectModel {
+    override suspend fun acceptOrReject(callId: Int,status:String): AcceptOrRejectModel {
         val token="Bearer ${user.accessToken}"
-        val response = apiCalls.acceptOrReject(token,callId)
+        val response = apiCalls.acceptOrReject(token,callId,status)
         return response
     }
 }

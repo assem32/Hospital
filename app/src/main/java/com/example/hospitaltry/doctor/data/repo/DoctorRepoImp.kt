@@ -6,8 +6,8 @@ import com.example.hospitaltry.doctor.domain.repo.IDoctorRepo
 import javax.inject.Inject
 
 class DoctorRepoImp @Inject constructor(val iDoctorDataSource: IDoctorDataSource) :IDoctorRepo {
-    override suspend fun acceptOrReject(callId: Int): AcceptOrRejectModel {
-        val response = iDoctorDataSource.acceptOrReject(callId)
+    override suspend fun acceptOrReject(callId: Int,status:String): AcceptOrRejectModel {
+        val response = iDoctorDataSource.acceptOrReject(callId,status)
         return response
     }
 }

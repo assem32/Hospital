@@ -29,8 +29,19 @@ class DoctorHomeFragment :Fragment(){
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDoctorHomeBinding.bind(view)
 
-        binding!!.containerAddCall.setOnClickListener{
-            findNavController().navigate(DoctorHomeFragmentDirections.actionDoctorHomeFragmentToDoctorAssignCallFragment())
+        binding!!.callContainer.setOnClickListener{
+            findNavController().navigate(DoctorHomeFragmentDirections.actionDoctorHomeFragmentToCallsCommonFragment())
         }
+        binding!!.containerReport.setOnClickListener{
+            findNavController().navigate(DoctorHomeFragmentDirections.actionDoctorHomeFragmentToReportsFragment())
+        }
+        binding!!.taskContainer.setOnClickListener {
+            findNavController().navigate(DoctorHomeFragmentDirections.actionDoctorHomeFragmentToTasksFragment())
+        }
+        binding!!.containerCases.setOnClickListener {
+            findNavController().navigate(DoctorHomeFragmentDirections.actionDoctorHomeFragmentToCasesFragment())
+
+        }
+
     }
 }

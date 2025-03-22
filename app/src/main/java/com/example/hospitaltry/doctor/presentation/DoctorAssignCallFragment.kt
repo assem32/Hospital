@@ -35,7 +35,6 @@ class DoctorAssignCallFragment :Fragment() {
         binding = FragmentDoctorAssignCallsBinding.bind(view)
         lifecycleScope.launch {
             getDoctorAllCalls.invoke()
-            Log.d("doctor",""+getDoctorAllCalls.invoke().get(0))
         }
     }
 }

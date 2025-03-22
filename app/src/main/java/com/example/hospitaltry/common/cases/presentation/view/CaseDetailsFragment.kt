@@ -1,19 +1,14 @@
 package com.example.hospitaltry.common.cases.presentation.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.example.hospitaltry.common.cases.presentation.viewModel.CaseDetailsViewModel
-import com.example.hospitaltry.databinding.FragmentCallDetailsBinding
 import com.example.hospitaltry.databinding.FragmentCaseDetailsBinding
-import com.example.hospitaltry.databinding.FragmentMangerCasesBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 

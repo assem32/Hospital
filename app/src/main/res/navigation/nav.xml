@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav"
-    app:startDestination="@id/casesFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -35,6 +35,12 @@
         <argument
             android:name="role"
             app:argType="string" />
+        <action
+            android:id="@+id/action_specalistFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
+        <action
+            android:id="@+id/action_specalistFragment_to_reportsFragment"
+            app:destination="@id/reportsFragment" />
     </fragment>
 
     <fragment
@@ -93,6 +99,12 @@
         <argument
             android:name="token"
             app:argType="string" />
+        <action
+            android:id="@+id/action_receptionistHomeFragment_to_reportsFragment"
+            app:destination="@id/reportsFragment" />
+        <action
+            android:id="@+id/action_receptionistHomeFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
     </fragment>
     <fragment
         android:id="@+id/callDetails"
@@ -134,6 +146,18 @@
         <action
             android:id="@+id/action_doctorHomeFragment_to_doctorAssignCallFragment"
             app:destination="@id/doctorAssignCallFragment" />
+        <action
+            android:id="@+id/action_doctorHomeFragment_to_callsCommonFragment"
+            app:destination="@id/callsCommonFragment" />
+        <action
+            android:id="@+id/action_doctorHomeFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
+        <action
+            android:id="@+id/action_doctorHomeFragment_to_reportsFragment"
+            app:destination="@id/reportsFragment" />
+        <action
+            android:id="@+id/action_doctorHomeFragment_to_casesFragment"
+            app:destination="@id/casesFragment" />
     </fragment>
     <fragment
         android:id="@+id/doctorAssignCallFragment"
@@ -149,6 +173,9 @@
         <action
             android:id="@+id/action_mangerHomeFragment_to_casesFragment"
             app:destination="@id/casesFragment" />
+        <action
+            android:id="@+id/action_mangerHomeFragment_to_reportsFragment"
+            app:destination="@id/reportsFragment" />
     </fragment>
     <fragment
         android:id="@+id/tasksFragment"
@@ -185,4 +212,24 @@
             android:name="id"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/reportsFragment"
+        android:name="com.example.hospitaltry.common.report.presentation.view.ReportsFragment"
+        android:label="ReportsFragment" >
+        <action
+            android:id="@+id/action_reportsFragment_to_reportDetailsFragment"
+            app:destination="@id/reportDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportDetailsFragment"
+        android:name="com.example.hospitaltry.common.report.presentation.view.ReportDetailsFragment"
+        android:label="ReportDetailsFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/callsCommonFragment"
+        android:name="com.example.hospitaltry.doctor.presentation.CallsCommonFragment"
+        android:label="CallsCommonFragment" />
 </navigation>

@@ -6,7 +6,7 @@ import com.example.hospitaltry.doctor.domain.repo.IDoctorRepo
 import javax.inject.Inject
 
 class AcceptRejectUseCase @Inject constructor(val iDoctorRepo : IDoctorRepo) {
-    suspend fun invoke (callId:Int):AcceptOrRejectModel{
-        return iDoctorRepo.acceptOrReject(callId)
+    suspend fun invoke (callId:Int,status:String):AcceptOrRejectModel{
+        return iDoctorRepo.acceptOrReject(callId,status)
     }
 }

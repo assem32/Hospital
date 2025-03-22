@@ -32,12 +32,18 @@ class HrFragment : Fragment() {
                 )
             )
         }
+        binding!!.taskContainer.setOnClickListener {
+            findNavController().navigate(HrFragmentDirections.actionSpecalistFragmentToTasksFragment())
+        }
+        binding!!.containerReport.setOnClickListener {
+            findNavController().navigate(HrFragmentDirections.actionSpecalistFragmentToReportsFragment())
+        }
 
 
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding = null // Avoid memory leaks by clearing the binding
+        binding = null
     }
 }

@@ -1,6 +1,7 @@
 package com.example.hospitaltry.reciptionist.presintation.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +24,8 @@ class ReceptionistHomeFragment :Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_receptionist_home, container, false)
+        binding = FragmentReceptionistHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,6 +41,16 @@ class ReceptionistHomeFragment :Fragment() {
 
         binding.callContainer.setOnClickListener{
             findNavController().navigate(ReceptionistHomeFragmentDirections.actionReceptionistHomeFragmentToCallsFragment(token))
+        }
+        binding.containerReport.setOnClickListener{
+            Log.d("token","ddddddddddddddddddddd")
+            findNavController().navigate(ReceptionistHomeFragmentDirections.actionReceptionistHomeFragmentToReportsFragment())
+        }
+        binding.containerReport.setOnClickListener {
+            findNavController().navigate(ReceptionistHomeFragmentDirections.actionReceptionistHomeFragmentToReportsFragment())
+        }
+        binding.containerTask.setOnClickListener {
+            findNavController().navigate(ReceptionistHomeFragmentDirections.actionReceptionistHomeFragmentToTasksFragment())
         }
 
     }
